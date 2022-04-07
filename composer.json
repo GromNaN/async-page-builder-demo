@@ -1,13 +1,15 @@
 {
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "amphp/amp": "v3.x-dev",
+        "amphp/byte-stream": "v2.x-dev",
+        "amphp/http-client": "v5.x-dev",
         "doctrine/annotations": "^1.13",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",

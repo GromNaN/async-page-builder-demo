@@ -2,7 +2,7 @@
 
 namespace App\Page\Block;
 
-use App\ApiClient;
+use App\HttpClient\ApiClient;
 use Symfony\Contracts\Service\Attribute\Required;
 
 trait WithApiClient
