@@ -1,0 +1,7 @@
+<h1>{{ ArticleContent.title }}</h1>
+
+<p>Publié le {{ ArticleContent.publishedAt|date('d m Y à H:i') }}</p>
+
+<div>
+    {{ ArticleContent.body|raw }}
+</div>

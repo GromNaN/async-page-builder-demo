@@ -1,0 +1,10 @@
+<h3>Articles sur le même sujet</h3>
+<ul>
+    {% for article in RelatedArticles.articles %}
+        <li>
+                <a href="{{ path('app_article', { id: article.id }) }}">
+                    {{ article.title }}
+                </a>
+        </li>
+    {% endfor %}
+</ul>

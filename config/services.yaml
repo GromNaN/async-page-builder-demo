@@ -10,6 +10,14 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $blocks: !tagged_locator { tag: 'app.block', index_by: 'key' }
+            $endpoint: 'https://api.programme-tv.net/v2'
+
+    _instanceof:
+        App\Page\Block:
+            lazy: true
+            tags: ['app.block']
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('blocks/ArticleContent.html.twig', { ArticleContent }) }}
+    {{ include('blocks/RelatedArticles.html.twig', { RelatedArticles }) }}
+    {{ include('blocks/LastArticles.html.twig', { LastArticles }) }}
+{% endblock %}

@@ -1,0 +1,10 @@
+<h3>Dernières actus</h3>
+<ul>
+    {% for article in LastArticles.articles %}
+        <li>
+                <a href="{{ path('app_article', { id: article.id }) }}">
+                    {{ article.title }}
+                </a>
+        </li>
+    {% endfor %}
+</ul>
