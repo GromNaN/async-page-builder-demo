@@ -2,6 +2,48 @@
     "amphp/amp": {
         "version": "v3.x-dev"
     },
+    "amphp/byte-stream": {
+        "version": "v2.x-dev"
+    },
+    "amphp/cache": {
+        "version": "v2.0.0-beta.2"
+    },
+    "amphp/dns": {
+        "version": "v2.0.0-beta.3"
+    },
+    "amphp/hpack": {
+        "version": "v3.1.1"
+    },
+    "amphp/http": {
+        "version": "v1.6.3"
+    },
+    "amphp/http-client": {
+        "version": "v5.x-dev"
+    },
+    "amphp/parser": {
+        "version": "v1.0.0"
+    },
+    "amphp/pipeline": {
+        "version": "v1.0.0-beta.4"
+    },
+    "amphp/process": {
+        "version": "v2.0.0-beta.3"
+    },
+    "amphp/serialization": {
+        "version": "v1.0.0"
+    },
+    "amphp/socket": {
+        "version": "v2.0.0-beta.6"
+    },
+    "amphp/sync": {
+        "version": "v2.0.0-beta.4"
+    },
+    "amphp/windows-registry": {
+        "version": "v1.0.0-beta.1"
+    },
+    "daverandom/libdns": {
+        "version": "v2.0.2"
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -17,6 +59,15 @@
     "doctrine/lexer": {
         "version": "1.2.3"
     },
+    "kelunik/certificate": {
+        "version": "v1.1.2"
+    },
+    "league/uri": {
+        "version": "6.5.0"
+    },
+    "league/uri-interfaces": {
+        "version": "2.3.0"
+    },
     "monolog/monolog": {
         "version": "2.4.0"
     },
@@ -31,6 +82,9 @@
     },
     "psr/event-dispatcher": {
         "version": "1.0.0"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
     },
     "psr/log": {
         "version": "3.0.0"
