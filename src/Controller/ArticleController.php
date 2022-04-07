@@ -25,6 +25,8 @@ class ArticleController extends AbstractController
             'LastArticles' => $this->builder->get(LastArticles::class, ['size' => 30]),
         ]);
 
+        dump($data);
+
         return $this->render('pages/index.html.twig', $data);
     }
 
@@ -36,6 +38,8 @@ class ArticleController extends AbstractController
             'RelatedArticles' => $this->builder->get(RelatedArticles::class, ['id' => $id]),
             'LastArticles' => $this->builder->get(LastArticles::class, ['size' => 3]),
         ]);
+
+        dump($data);
 
         return $this->render('pages/article.html.twig', $data);
     }

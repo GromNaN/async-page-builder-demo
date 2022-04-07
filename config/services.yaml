@@ -12,7 +12,7 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             $blocks: !tagged_locator { tag: 'app.block', index_by: 'key' }
-            $endpoint: 'https://api.programme-tv.net/v2'
+            $endpoint: '%env(string:API_ENDPOINT)%'
 
     _instanceof:
         App\Page\Block:
