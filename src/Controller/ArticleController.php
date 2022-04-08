@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Amp\Future;
 use App\Page\Block\ArticleContent;
 use App\Page\Block\LastArticles;
 use App\Page\Block\RelatedArticles;

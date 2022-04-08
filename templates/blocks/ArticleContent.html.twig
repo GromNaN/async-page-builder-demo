@@ -1,7 +1,9 @@
-<h1>{{ ArticleContent.title }}</h1>
+<section style="border: chocolate dotted 10px;padding: 30px;margin: 30px;">
+    <h1>{{ ArticleContent.title }}</h1>
 
-<p>Publié le {{ ArticleContent.publishedAt|date('d m Y à H:i') }}</p>
+    <small>Publié le {{ ArticleContent.publishedAt|date('d/m/Y à H:i') }}</small>
 
-<div>
-    {{ ArticleContent.body|raw }}
-</div>
+    <div>
+        {{ ArticleContent.body|raw }}
+    </div>
+</section>

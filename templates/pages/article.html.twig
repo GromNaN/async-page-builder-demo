@@ -2,6 +2,7 @@
 
 {% block body %}
     {{ include('blocks/ArticleContent.html.twig', { ArticleContent }) }}
+    {{ include('blocks/Ads.html.twig', { Ads: { location: 'bas' } }) }}
     {{ include('blocks/RelatedArticles.html.twig', { RelatedArticles }) }}
     {{ include('blocks/LastArticles.html.twig', { LastArticles }) }}
 {% endblock %}
