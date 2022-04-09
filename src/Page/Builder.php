@@ -5,12 +5,14 @@ namespace App\Page;
 use Amp\Future;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Stopwatch\Stopwatch;
 use function Amp\async;
 
 class Builder
 {
     public function __construct(
-        private readonly ServiceLocator $blocks
+        private readonly ServiceLocator $blocks,
+        private readonly Stopwatch $stopwatch,
     ) {
     }
 
@@ -26,6 +28,13 @@ class Builder
         $block->configureOptions($resolver);
         $options = $resolver->resolve($options);
 
-        return async($block(...), $options);
+        return async(function () use ($block, $options) {
+            $event = $this->stopwatch->start(get_class($block), 'page_block');
+            try {
+                return $block($options);
+            } finally {
+                $event->stop();
+            }
+        });
     }
 }

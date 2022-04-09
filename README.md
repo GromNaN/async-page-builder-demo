@@ -5,6 +5,9 @@ components is challenging. With our designers we start by creating
 wireframes defining reusable components used by the backend developers.
 
 Using async PHP, is a solution to organize PHP code by Component.
+Performances are optimized thanks to concurrent resolution of all components.
+
+![image](https://user-images.githubusercontent.com/400034/162593609-afdd44f1-8eb4-48b4-9ab5-afd4f96dcaf5.png)
 
 This demo app contains 2 pages:
 - The home with a list of last published articles.
@@ -18,7 +21,8 @@ We define a table to specify which blocks are used by each page.
 | app_index   	| X            	|                	|                 	|
 | app_article 	| X            	| X              	| X               	|
 
-Technical stack:
+## Technical stack
+
 - PHP 8.1+
 - Symfony 6
 - AMP v3+ (dev) with Fibers
