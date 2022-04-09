@@ -19,10 +19,10 @@ class LastArticles implements Block
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver
-            ->setDefault('size', '30')
-            ->setAllowedTypes('size', 'int')
-            ->setAllowedValues('size', fn (int $value): bool => $value > 1 && $value < 100)
+        $resolver->define('size')
+            ->default(30)
+            ->allowedTypes('int')
+            ->allowedValues(fn (int $value): bool => $value > 1 && $value < 100)
         ;
     }
 }

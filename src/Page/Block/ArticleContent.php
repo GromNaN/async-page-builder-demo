@@ -19,6 +19,9 @@ class ArticleContent implements Block
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setRequired('id')->setAllowedTypes('id', 'int');
+        $resolver->define('id')
+            ->required()
+            ->allowedTypes('int')
+        ;
     }
 }
