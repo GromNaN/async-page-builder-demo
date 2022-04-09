@@ -26,6 +26,6 @@ class Builder
         $block->configureOptions($resolver);
         $options = $resolver->resolve($options);
 
-        return async(fn () => $block($options));
+        return async($block(...), $options);
     }
 }
