@@ -41,4 +41,4 @@ symfony server:start -d
 
 This demo have been created by [Jérôme TAMARELLE](https://jerome.tamarelle.net).
 
-It is inpired by how websites are build at [Prisma Media](https://www.prismamedia.com/).
+It is inpired by how we build [Prisma Media](https://www.prismamedia.com/)'s websites.
