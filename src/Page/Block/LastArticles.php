@@ -10,6 +10,8 @@ class LastArticles implements Block
 {
     use WithApiClient;
 
+    public const SIZE = 'size';
+
     public function __invoke(array $options): array|View
     {
         $articles = $this->apiClient->get('/v2/articles?limit='.$options['size']);
@@ -19,7 +21,7 @@ class LastArticles implements Block
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->define('size')
+        $resolver->define(self::SIZE)
             ->default(30)
             ->allowedTypes('int')
             ->allowedValues(fn (int $value): bool => $value > 1 && $value < 100)
