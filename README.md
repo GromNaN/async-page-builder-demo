@@ -16,7 +16,7 @@ and the same list of last published articles used in the home page.
 
 We define a table to specify which blocks are used by each page.
 
-| Blocks/Page 	| LastArticles 	| ArticleContent 	| RelatedArticles 	|
+| Pages\Blocks	| LastArticles 	| ArticleContent 	| RelatedArticles 	|
 |-------------	|--------------	|----------------	|-----------------	|
 | app_index   	| X            	|                	|                 	|
 | app_article 	| X            	| X              	| X               	|
