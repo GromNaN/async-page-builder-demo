@@ -22,7 +22,9 @@ class ArticleController extends AbstractController
     public function index(): Response
     {
         $data = await([
-            'LastArticles' => $this->builder->get(LastArticles::class, size: 30),
+            'LastArticles' => $this->builder->get(LastArticles::class)(
+                size: 30,
+            ),
         ]);
 
         dump($data);
@@ -34,9 +36,15 @@ class ArticleController extends AbstractController
     public function article(int $id): Response
     {
         $data = await([
-            'ArticleContent' => $this->builder->get(ArticleContent::class, id: $id),
-            'RelatedArticles' => $this->builder->get(RelatedArticles::class, id: $id),
-            'LastArticles' => $this->builder->get(LastArticles::class, size: 3),
+            'ArticleContent' => $this->builder->get(ArticleContent::class)(
+                id: $id,
+            ),
+            'RelatedArticles' => $this->builder->get(RelatedArticles::class)(
+                id: $id,
+            ),
+            'LastArticles' => $this->builder->get(LastArticles::class)(
+                size: 3,
+            ),
         ]);
 
         dump($data);

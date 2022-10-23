@@ -2,11 +2,8 @@
 
 namespace App\Page;
 
-use Amp\Future;
 use Symfony\Component\DependencyInjection\ServiceLocator;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Stopwatch\Stopwatch;
-use function Amp\async;
 
 class Builder
 {
@@ -17,25 +14,14 @@ class Builder
     }
 
     /**
-     * Returns an async call for the block instantiation
+     * @template CLASS
+     *
+     * @param class-string<CLASS> $class
+     *
+     * @return CLASS
      */
-    public function get(string $fqcn, ...$options): Future
+    public function get(string $class): Block
     {
-        $block = $this->blocks->get($fqcn);
-        assert($block instanceof Block);
-        assert(is_callable($block));
-
-        $resolver = new OptionsResolver();
-        $block->configureOptions($resolver);
-        $options = $resolver->resolve($options);
-
-        return async(function () use ($block, $options) {
-            $event = $this->stopwatch->start(get_class($block), 'page_block');
-            try {
-                return $block(...$options);
-            } finally {
-                $event->stop();
-            }
-        });
+        return new BlockResolver($this->blocks->get($class), $this->stopwatch);
     }
 }
