@@ -10,8 +10,6 @@ class RelatedArticles implements Block
 {
     use WithApiClient;
 
-    public const ID = 'id';
-
     public function __invoke(array $options): array|View
     {
         $data = $this->apiClient->get('/v2/articles/'.$options['id']);
@@ -25,7 +23,7 @@ class RelatedArticles implements Block
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->define(self::ID)
+        $resolver->define('id')
             ->required()
             ->allowedTypes('int')
         ;
