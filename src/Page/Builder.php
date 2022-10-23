@@ -19,10 +19,11 @@ class Builder
     /**
      * Returns an async call for the block instantiation
      */
-    public function get(string $fqcn, array $options = []): Future
+    public function get(string $fqcn, ...$options): Future
     {
         $block = $this->blocks->get($fqcn);
         assert($block instanceof Block);
+        assert(is_callable($block));
 
         $resolver = new OptionsResolver();
         $block->configureOptions($resolver);
@@ -31,7 +32,7 @@ class Builder
         return async(function () use ($block, $options) {
             $event = $this->stopwatch->start(get_class($block), 'page_block');
             try {
-                return $block($options);
+                return $block(...$options);
             } finally {
                 $event->stop();
             }
