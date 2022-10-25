@@ -6,15 +6,13 @@ use App\Page\Block;
 use App\Page\View;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class RelatedArticles implements Block
+class RelatedArticles extends Block
 {
     use WithApiClient;
 
-    public const ID = 'id';
-
-    public function __invoke(array $options): array|View
+    public function __invoke(int $id): array|View
     {
-        $data = $this->apiClient->get('/v2/articles/'.$options['id']);
+        $data = $this->apiClient->get('/v2/articles/'.$id);
 
         $tags = array_slice(array_column($data['item']['tags'], 'slug'), 0, 3);
 
@@ -25,7 +23,7 @@ class RelatedArticles implements Block
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->define(self::ID)
+        $resolver->define('id')
             ->required()
             ->allowedTypes('int')
         ;
